@@ -1,3 +1,4 @@
+/*
 import 'dart:async';
 import 'dart:convert';
 
@@ -129,5 +130,99 @@ class TwitterClient extends AbstractTwitterClient {
         return Future.error(response);
       }
     });
+  }
+}
+*/
+
+import 'dart:async';
+import 'dart:convert';
+import 'package:dart_twitter_api/api/abstract_twitter_client.dart';
+import 'package:http/http.dart' as http;
+
+class TwitterClient extends AbstractTwitterClient {
+
+  TwitterClient({
+    required this.consumerKey,
+    required this.consumerSecret,
+    required this.token,
+    required this.secret,
+    this.defaultTimeout = _kDefaultTimeout,
+  });
+
+  String consumerKey;
+  String consumerSecret;
+  String token;
+  String secret;
+  
+  Future<http.Response> get(
+    Uri uri, {
+    Map<String, String>? headers,
+    Duration? timeout,
+  }) async {
+    final requestHeaders = {
+      ...?headers,
+      'Authorization': 'Bearer $token', // 使用 Token 进行认证
+    };
+
+    final response = await http.get(uri, headers: requestHeaders).timeout(timeout ?? Duration(seconds: 10));
+
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      return response;
+    } else {
+      return Future.error(response);
+    }
+  }
+
+  Future<http.Response> post(
+    Uri uri, {
+    Map<String, String>? headers,
+    dynamic body,
+    Encoding? encoding,
+    Duration? timeout,
+  }) async {
+    final requestHeaders = {
+      ...?headers,
+      'Authorization': 'Bearer $token', // 使用 Token 进行认证
+    };
+
+    final response = await http
+        .post(uri, headers: requestHeaders, body: body, encoding: encoding)
+        .timeout(timeout ?? Duration(seconds: 10));
+
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      return response;
+    } else {
+      return Future.error(response);
+    }
+  }
+
+  Future<http.Response> multipartRequest(
+    Uri uri, {
+    List<http.MultipartFile>? files,
+    Map<String, String>? headers,
+    String method = 'POST',
+    Duration? timeout,
+  }) async {
+    final request = http.MultipartRequest(method, uri);
+
+    if (files != null) {
+      request.files.addAll(files);
+    }
+
+    final requestHeaders = {
+      ...?headers,
+      'Authorization': 'Bearer $token', // 使用 Token 进行认证
+    };
+
+    request.headers.addAll(requestHeaders);
+
+    final streamedResponse = await request.send().timeout(timeout ?? Duration(seconds: 10));
+    final response = await http.Response.fromStream(streamedResponse);
+
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      return response;
+    } else {
+      return Future.error(response);
+    }
   }
 }
