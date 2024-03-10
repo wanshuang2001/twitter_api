@@ -139,6 +139,10 @@ import 'dart:convert';
 import 'package:dart_twitter_api/api/abstract_twitter_client.dart';
 import 'package:http/http.dart' as http;
 
+typedef TransformResponse<T> = FutureOr<T> Function(Response response);
+
+const Duration _kDefaultTimeout = Duration(seconds: 10);
+
 class TwitterClient extends AbstractTwitterClient {
 
   TwitterClient({
