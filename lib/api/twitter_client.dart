@@ -173,6 +173,8 @@ class TwitterClient extends AbstractTwitterClient {
     final requestHeaders = {
       ...?headers,
       'Authorization': 'Bearer $token', // 使用 Token 进行认证
+      'user_id': userId, // 添加 user_id 到 headers
+      'token': token,
     };
 
     final response = await http.get(uri, headers: requestHeaders).timeout(timeout ?? Duration(seconds: 10));
@@ -194,6 +196,8 @@ class TwitterClient extends AbstractTwitterClient {
     final requestHeaders = {
       ...?headers,
       'Authorization': 'Bearer $token', // 使用 Token 进行认证
+      'user_id': userId, // 添加 user_id 到 headers
+      'token': token,
     };
 
     final response = await http
@@ -223,6 +227,8 @@ class TwitterClient extends AbstractTwitterClient {
     final requestHeaders = {
       ...?headers,
       'Authorization': 'Bearer $token', // 使用 Token 进行认证
+      'user_id': userId, // 添加 user_id 到 headers
+      'token': token,
     };
 
     request.headers.addAll(requestHeaders);
