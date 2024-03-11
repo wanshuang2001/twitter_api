@@ -159,6 +159,7 @@ class TwitterClient extends AbstractTwitterClient {
   String consumerSecret;
   String token;
   String secret;
+  late final String userId;
   /// The time it takes for a request to time out and throw a [TimeoutException].
   ///
   /// A request can override the default timeout independently.
@@ -234,6 +235,18 @@ class TwitterClient extends AbstractTwitterClient {
     } else {
       return Future.error(response);
     }
+  }
+
+  // 实现获取用户 ID 的方法
+  @override
+  void setUserId(String InUserId) {
+    userId = InUserId;
+  }
+
+  // 实现获取 Token 的方法
+  @override
+  void setToken(String InToken) {
+    token = InToken;
   }
 }
 

@@ -8,6 +8,12 @@ class UserService {
 
   final AbstractTwitterClient client;
 
+  // 设置 client 的 userId 和 token
+  void setUserIdAndToken(String userId, String token) {
+    client.setUserId(userId);
+    client.setToken(token);
+  }
+
   /// Returns a cursored collection of user IDs for every user following the
   /// specified user.
   ///

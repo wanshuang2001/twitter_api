@@ -30,4 +30,10 @@ abstract class AbstractTwitterClient {
     Map<String, String>? headers,
     Duration? timeout,
   });
+
+  // 添加获取用户 ID 的抽象方法
+  void setUserId(String InUserId);
+
+  // 添加获取 Token 的抽象方法
+  void setToken(String InToken);
 }
