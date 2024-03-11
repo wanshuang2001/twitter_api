@@ -153,13 +153,14 @@ class TwitterClient extends AbstractTwitterClient {
     required this.token,
     required this.secret,
     this.defaultTimeout = _kDefaultTimeout,
+    this.userId = '-1',
   });
 
   String consumerKey;
   String consumerSecret;
   String token;
   String secret;
-  late final String userId;
+  String userId;
   /// The time it takes for a request to time out and throw a [TimeoutException].
   ///
   /// A request can override the default timeout independently.
