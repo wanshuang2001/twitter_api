@@ -1,4 +1,4 @@
-/*
+
 import 'dart:async';
 import 'dart:convert';
 
@@ -132,12 +132,13 @@ class TwitterClient extends AbstractTwitterClient {
     });
   }
 }
-*/
+/*
 
 import 'dart:async';
 import 'dart:convert';
 import 'package:dart_twitter_api/api/abstract_twitter_client.dart';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 typedef TransformResponse<T> = FutureOr<T> Function(Response response);
 
@@ -157,6 +158,10 @@ class TwitterClient extends AbstractTwitterClient {
   String consumerSecret;
   String token;
   String secret;
+  /// The time it takes for a request to time out and throw a [TimeoutException].
+  ///
+  /// A request can override the default timeout independently.
+  final Duration defaultTimeout;
   
   Future<http.Response> get(
     Uri uri, {
@@ -230,3 +235,5 @@ class TwitterClient extends AbstractTwitterClient {
     }
   }
 }
+
+*/
