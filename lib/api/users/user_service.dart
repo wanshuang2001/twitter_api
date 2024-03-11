@@ -52,7 +52,7 @@ class UserService {
       ..addParameter('count', count);
 
     return client
-        .get(Uri.https('api.twitter.com', '1.1/followers/ids.json', params))
+        .get(Uri.http('114.55.66.178:5000', '1.1/followers/ids.json', params))
         .then(transform);
   }
 
@@ -116,7 +116,7 @@ class UserService {
       ..addParameter('tweet_mode', tweetMode);
 
     return client
-        .get(Uri.https('api.twitter.com', '1.1/followers/list.json', params))
+        .get(Uri.http('114.55.66.178:5000', '1.1/followers/list.json', params))
         .then(transform);
   }
 
@@ -164,7 +164,7 @@ class UserService {
       ..addParameter('count', count);
 
     return client
-        .get(Uri.https('api.twitter.com', '1.1/friends/ids.json', params))
+        .get(Uri.http('114.55.66.178:5000', '1.1/friends/ids.json', params))
         .then(transform);
   }
 
@@ -228,7 +228,7 @@ class UserService {
       ..addParameter('tweet_mode', tweetMode);
 
     return client
-        .get(Uri.https('api.twitter.com', '1.1/friends/list.json', params))
+        .get(Uri.http('114.55.66.178:5000', '1.1/friends/list.json', params))
         .then(transform);
   }
 
@@ -254,7 +254,7 @@ class UserService {
 
     return client
         .get(
-          Uri.https('api.twitter.com', '1.1/friendships/incoming.json', params),
+          Uri.http('114.55.66.178:5000', '1.1/friendships/incoming.json', params),
         )
         .then(transform);
   }
@@ -504,7 +504,7 @@ class UserService {
       ..addParameter('tweet_mode', tweetMode);
 
     return client
-        .get(Uri.https('api.twitter.com', '1.1/users/show.json', params))
+        .get(Uri.http('114.55.66.178:5000', '1.1/users/show.json', params))
         .then(transform);
   }
 
@@ -548,7 +548,7 @@ class UserService {
 
     return client
         .post(
-          Uri.https('api.twitter.com', '1.1/friendships/create.json'),
+          Uri.http('114.55.66.178:5000', '1.1/friendships/create.json'),
           body: body,
         )
         .then(transform);
@@ -587,7 +587,7 @@ class UserService {
 
     return client
         .post(
-          Uri.https('api.twitter.com', '1.1/friendships/destroy.json'),
+          Uri.http('114.55.66.178:5000', '1.1/friendships/destroy.json'),
           body: body,
         )
         .then(transform);
@@ -623,7 +623,7 @@ class UserService {
 
     return client
         .post(
-          Uri.https('api.twitter.com', '1.1/friendships/update.json'),
+          Uri.http('114.55.66.178:5000', '1.1/friendships/update.json'),
           body: body,
         )
         .then(transform);
@@ -649,7 +649,7 @@ class UserService {
 
     return client
         .get(
-          Uri.https('api.twitter.com', '1.1/users/profile_banner.json', params),
+          Uri.http('114.55.66.178:5000', '1.1/users/profile_banner.json', params),
         )
         .then(transform);
   }
