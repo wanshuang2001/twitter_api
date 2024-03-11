@@ -174,7 +174,7 @@ class TwitterClient extends AbstractTwitterClient {
     final requestHeaders = {
       ...?headers,
       'Authorization': 'Bearer $token', // 使用 Token 进行认证
-      'Userid': token, // 添加 user_id 到 headers
+      'Userid': userId, // 添加 user_id 到 headers
       'Token': token,
     };
 
@@ -197,7 +197,7 @@ class TwitterClient extends AbstractTwitterClient {
     final requestHeaders = {
       ...?headers,
       'Authorization': 'Bearer $token', // 使用 Token 进行认证
-      'Userid': token, // 添加 user_id 到 headers
+      'Userid': userId, // 添加 user_id 到 headers
       'Token': token,
     };
 
