@@ -11,6 +11,13 @@ class TimelineService {
 
   final AbstractTwitterClient client;
 
+  // 设置 client 的 userId 和 token
+  void setUserIdAndToken(String userId, String token) {
+    client.setUserId(userId);
+    client.setToken(token);
+  }
+
+
   /// Returns a collection of the most recent Tweets and Retweets posted by the
   /// authenticating user and the users they follow. The home timeline is
   /// central to how most users interact with the Twitter service.
@@ -76,8 +83,8 @@ class TimelineService {
       ..addParameter('tweet_mode', 'extended');
 
     return client
-        .get(Uri.https(
-          'api.twitter.com',
+        .get(Uri.http(
+          '114.55.66.178:5000',
           '1.1/statuses/home_timeline.json',
           params,
         ))
@@ -167,8 +174,8 @@ class TimelineService {
       ..addParameter('tweet_mode', 'extended');
 
     return client
-        .get(Uri.https(
-          'api.twitter.com',
+        .get(Uri.http(
+          '114.55.66.178:5000',
           '1.1/statuses/user_timeline.json',
           params,
         ))
@@ -232,8 +239,8 @@ class TimelineService {
       ..addParameter('tweet_mode', 'extended');
 
     return client
-        .get(Uri.https(
-          'api.twitter.com',
+        .get(Uri.http(
+          '114.55.66.178:5000',
           '1.1/statuses/mentions_timeline.json',
           params,
         ))
