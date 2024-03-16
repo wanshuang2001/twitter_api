@@ -29,7 +29,7 @@ List<Tweet> _isolateTweetListTransform(String body) {
     final t = Tweet.fromJson(tweetJson);
     //tweets.add(Tweet.fromJson(tweetJson));
     tweets.add(t);
-    String? tex = t.text;
+    String? tex = t.fullText;
     print('Tweet Text t: ${tex}');
   }
 
