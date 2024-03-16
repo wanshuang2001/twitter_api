@@ -26,9 +26,11 @@ List<Tweet> _isolateTweetListTransform(String body) {
   final tweets = <Tweet>[];
   print('Tweet Text body: ${body}');
   for (Map<String, dynamic> tweetJson in json.decode(body)) {
-    tweets.add(Tweet.fromJson(tweetJson));
     final t = Tweet.fromJson(tweetJson);
-    print('Tweet Text t: ${t}');
+    //tweets.add(Tweet.fromJson(tweetJson));
+    tweets.add(t);
+    String? tex = t.text;
+    print('Tweet Text t: ${tex}');
   }
 
   return tweets;
