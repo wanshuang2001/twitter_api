@@ -29,8 +29,8 @@ List<Tweet> _isolateTweetListTransform(String body) {
     final t = Tweet.fromJson(tweetJson);
     //tweets.add(Tweet.fromJson(tweetJson));
     tweets.add(t);
-    String? tex = t.fullText;
-    print('Tweet Text t: ${tex}');
+    final tex = t.entities;
+    print('Tweet entities t: ${tex}');
   }
 
   return tweets;
