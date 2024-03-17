@@ -6,15 +6,14 @@ part of 'edit_control.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-EditControlData _$EditControlDataFromJson(Map<String, dynamic> json) {
-  return EditControlData()
-    ..initial = json['initial'] == null
-        ? null
-        : InitialInfo.fromJson(json['initial'] as Map<String, dynamic>)
-    ..edit = json['edit'] == null
-        ? null
-        : EditedInfo.fromJson(json['edit'] as Map<String, dynamic>);
-}
+EditControlData _$EditControlDataFromJson(Map<String, dynamic> json) =>
+    EditControlData()
+      ..initial = json['initial'] == null
+          ? null
+          : InitialInfo.fromJson(json['initial'] as Map<String, dynamic>)
+      ..edit = json['edit'] == null
+          ? null
+          : EditedInfo.fromJson(json['edit'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$EditControlDataToJson(EditControlData instance) =>
     <String, dynamic>{
@@ -22,15 +21,13 @@ Map<String, dynamic> _$EditControlDataToJson(EditControlData instance) =>
       'edit': instance.edit?.toJson(),
     };
 
-InitialInfo _$InitialInfoFromJson(Map<String, dynamic> json) {
-  return InitialInfo()
-    ..editTweetIds = (json['edit_tweet_ids'] as List<dynamic>?)
-        ?.map((e) => e as String)
-        .toList()
-    ..editableUntilMsecs = json['editable_until_msecs'] as String?
-    ..editsRemaining = json['edits_remaining'] as String?
-    ..isEditEligible = json['is_edit_eligible'] as bool?;
-}
+InitialInfo _$InitialInfoFromJson(Map<String, dynamic> json) => InitialInfo()
+  ..editTweetIds = (json['edit_tweet_ids'] as List<dynamic>?)
+      ?.map((e) => e as String)
+      .toList()
+  ..editableUntilMsecs = json['editable_until_msecs'] as String?
+  ..editsRemaining = json['edits_remaining'] as String?
+  ..isEditEligible = json['is_edit_eligible'] as bool?;
 
 Map<String, dynamic> _$InitialInfoToJson(InitialInfo instance) =>
     <String, dynamic>{
@@ -40,14 +37,12 @@ Map<String, dynamic> _$InitialInfoToJson(InitialInfo instance) =>
       'is_edit_eligible': instance.isEditEligible,
     };
 
-EditedInfo _$EditedInfoFromJson(Map<String, dynamic> json) {
-  return EditedInfo()
-    ..editControlInitial = json['edit_control_initial'] == null
-        ? null
-        : InitialInfo.fromJson(
-            json['edit_control_initial'] as Map<String, dynamic>)
-    ..initialTweetId = json['initial_tweet_id'] as String?;
-}
+EditedInfo _$EditedInfoFromJson(Map<String, dynamic> json) => EditedInfo()
+  ..editControlInitial = json['edit_control_initial'] == null
+      ? null
+      : InitialInfo.fromJson(
+          json['edit_control_initial'] as Map<String, dynamic>)
+  ..initialTweetId = json['initial_tweet_id'] as String?;
 
 Map<String, dynamic> _$EditedInfoToJson(EditedInfo instance) =>
     <String, dynamic>{

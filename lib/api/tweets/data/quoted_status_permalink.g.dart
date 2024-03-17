@@ -7,12 +7,11 @@ part of 'quoted_status_permalink.dart';
 // **************************************************************************
 
 QuotedStatusPermalink _$QuotedStatusPermalinkFromJson(
-    Map<String, dynamic> json) {
-  return QuotedStatusPermalink()
-    ..url = json['url'] as String?
-    ..expanded = json['expanded'] as String?
-    ..display = json['display'] as String?;
-}
+        Map<String, dynamic> json) =>
+    QuotedStatusPermalink()
+      ..url = json['url'] as String?
+      ..expanded = json['expanded'] as String?
+      ..display = json['display'] as String?;
 
 Map<String, dynamic> _$QuotedStatusPermalinkToJson(
         QuotedStatusPermalink instance) =>

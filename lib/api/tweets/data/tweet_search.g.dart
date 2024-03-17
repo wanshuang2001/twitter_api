@@ -6,16 +6,14 @@ part of 'tweet_search.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TweetSearch _$TweetSearchFromJson(Map<String, dynamic> json) {
-  return TweetSearch()
-    ..statuses = (json['statuses'] as List<dynamic>?)
-        ?.map((e) => Tweet.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..searchMetadata = json['search_metadata'] == null
-        ? null
-        : SearchMetadata.fromJson(
-            json['search_metadata'] as Map<String, dynamic>);
-}
+TweetSearch _$TweetSearchFromJson(Map<String, dynamic> json) => TweetSearch()
+  ..statuses = (json['statuses'] as List<dynamic>?)
+      ?.map((e) => Tweet.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..searchMetadata = json['search_metadata'] == null
+      ? null
+      : SearchMetadata.fromJson(
+          json['search_metadata'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$TweetSearchToJson(TweetSearch instance) =>
     <String, dynamic>{
@@ -23,16 +21,15 @@ Map<String, dynamic> _$TweetSearchToJson(TweetSearch instance) =>
       'search_metadata': instance.searchMetadata?.toJson(),
     };
 
-SearchMetadata _$SearchMetadataFromJson(Map<String, dynamic> json) {
-  return SearchMetadata()
-    ..completedIn = (json['completedIn'] as num?)?.toDouble()
-    ..maxIdStr = json['maxIdStr'] as String?
-    ..nextResults = json['nextResults'] as String?
-    ..query = json['query'] as String?
-    ..refreshUrl = json['refreshUrl'] as String?
-    ..count = json['count'] as int?
-    ..sinceIdStr = json['sinceIdStr'] as String?;
-}
+SearchMetadata _$SearchMetadataFromJson(Map<String, dynamic> json) =>
+    SearchMetadata()
+      ..completedIn = (json['completedIn'] as num?)?.toDouble()
+      ..maxIdStr = json['maxIdStr'] as String?
+      ..nextResults = json['nextResults'] as String?
+      ..query = json['query'] as String?
+      ..refreshUrl = json['refreshUrl'] as String?
+      ..count = json['count'] as int?
+      ..sinceIdStr = json['sinceIdStr'] as String?;
 
 Map<String, dynamic> _$SearchMetadataToJson(SearchMetadata instance) =>
     <String, dynamic>{

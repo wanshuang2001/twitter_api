@@ -6,14 +6,12 @@ part of 'poll.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Poll _$PollFromJson(Map<String, dynamic> json) {
-  return Poll()
-    ..options = (json['options'] as List<dynamic>?)
-        ?.map((e) => Option.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..endDatetime = convertTwitterDateTime(json['end_datetime'] as String?)
-    ..durationMinutes = json['duration_minutes'] as String?;
-}
+Poll _$PollFromJson(Map<String, dynamic> json) => Poll()
+  ..options = (json['options'] as List<dynamic>?)
+      ?.map((e) => Option.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..endDatetime = convertTwitterDateTime(json['end_datetime'] as String?)
+  ..durationMinutes = json['duration_minutes'] as String?;
 
 Map<String, dynamic> _$PollToJson(Poll instance) => <String, dynamic>{
       'options': instance.options?.map((e) => e.toJson()).toList(),

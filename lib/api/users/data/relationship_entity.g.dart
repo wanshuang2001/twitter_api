@@ -6,24 +6,23 @@ part of 'relationship_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RelationshipEntity _$RelationshipEntityFromJson(Map<String, dynamic> json) {
-  return RelationshipEntity()
-    ..idStr = json['id_str'] as String?
-    ..screenName = json['screen_name'] as String?
-    ..following = json['following'] as bool?
-    ..followedBy = json['followed_by'] as bool?
-    ..liveFollowing = json['live_following'] as bool?
-    ..followingReceived = json['following_received'] as bool?
-    ..followingRequested = json['following_requested'] as bool?
-    ..notificationsEnabled = json['notifications_enabled'] as bool?
-    ..canDm = json['can_dm'] as bool?
-    ..blocking = json['blocking'] as bool?
-    ..blockedBy = json['blocked_by'] as bool?
-    ..muting = json['muting'] as bool?
-    ..wantRetweets = json['want_retweets'] as bool?
-    ..allReplies = json['all_replies'] as bool?
-    ..markedSpam = json['marked_spam'] as bool?;
-}
+RelationshipEntity _$RelationshipEntityFromJson(Map<String, dynamic> json) =>
+    RelationshipEntity()
+      ..idStr = json['id_str'] as String?
+      ..screenName = json['screen_name'] as String?
+      ..following = json['following'] as bool?
+      ..followedBy = json['followed_by'] as bool?
+      ..liveFollowing = json['live_following'] as bool?
+      ..followingReceived = json['following_received'] as bool?
+      ..followingRequested = json['following_requested'] as bool?
+      ..notificationsEnabled = json['notifications_enabled'] as bool?
+      ..canDm = json['can_dm'] as bool?
+      ..blocking = json['blocking'] as bool?
+      ..blockedBy = json['blocked_by'] as bool?
+      ..muting = json['muting'] as bool?
+      ..wantRetweets = json['want_retweets'] as bool?
+      ..allReplies = json['all_replies'] as bool?
+      ..markedSpam = json['marked_spam'] as bool?;
 
 Map<String, dynamic> _$RelationshipEntityToJson(RelationshipEntity instance) =>
     <String, dynamic>{

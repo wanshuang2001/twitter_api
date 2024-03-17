@@ -6,11 +6,9 @@ part of 'option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Option _$OptionFromJson(Map<String, dynamic> json) {
-  return Option()
-    ..position = json['position'] as int?
-    ..text = json['text'] as String?;
-}
+Option _$OptionFromJson(Map<String, dynamic> json) => Option()
+  ..position = json['position'] as int?
+  ..text = json['text'] as String?;
 
 Map<String, dynamic> _$OptionToJson(Option instance) => <String, dynamic>{
       'position': instance.position,
