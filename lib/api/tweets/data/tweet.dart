@@ -173,5 +173,7 @@ class Tweet {
   /// adding `include_ext_edit_control=true` as a parameter to any endoint).
   EditControlData? extEditControl;
 
+  bool? mediaOnTop;
+
   Map<String, dynamic> toJson() => _$TweetToJson(this);
 }
