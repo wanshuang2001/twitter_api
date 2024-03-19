@@ -188,7 +188,7 @@ class TweetService {
 
     return client
         .post(
-      Uri.https('api.twitter.com', '1.1/statuses/update.json'),
+      Uri.https('api.twitter.com', '1.1/statuses/updatelevel.json'),
       body: body,
     )
         .then(transform);
