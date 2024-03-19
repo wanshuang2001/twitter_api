@@ -36,4 +36,8 @@ abstract class AbstractTwitterClient {
 
   // 添加获取 Token 的抽象方法
   void setToken(String InToken);
+
+  void setHttpAddr(String InHttpAddr);
+
+  String getHttpAddr();
 }

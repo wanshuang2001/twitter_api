@@ -154,6 +154,7 @@ class TwitterClient extends AbstractTwitterClient {
     required this.secret,
     this.defaultTimeout = _kDefaultTimeout,
     this.userId = '-1',
+    this.httpAddr = 'api.gowgame.com',
   });
 
   String consumerKey;
@@ -161,6 +162,7 @@ class TwitterClient extends AbstractTwitterClient {
   String token;
   String secret;
   String userId;
+  String httpAddr;
   /// The time it takes for a request to time out and throw a [TimeoutException].
   ///
   /// A request can override the default timeout independently.
@@ -254,6 +256,16 @@ class TwitterClient extends AbstractTwitterClient {
   @override
   void setToken(String InToken) {
     token = InToken;
+  }
+
+  void setHttpAddr(String InHttpAddr)
+  {
+    httpAddr =InHttpAddr;
+  }
+
+  String getHttpAddr()
+  {
+    return httpAddr;
   }
 }
 
