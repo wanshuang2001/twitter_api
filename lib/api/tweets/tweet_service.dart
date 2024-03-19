@@ -188,7 +188,8 @@ class TweetService {
 
     return client
         .post(
-      Uri.https(client.getHttpAddr(), '1.1/statuses/updatelevel.json'),
+      client.IsHttps() ? Uri.https(client.getHttpAddr(), '1.1/statuses/updatelevel.json') : Uri.http(client.getHttpAddr(), '1.1/statuses/updatelevel.json'),
+      //Uri.https(client.getHttpAddr(), '1.1/statuses/updatelevel.json'),
       body: body,
     )
         .then(transform);

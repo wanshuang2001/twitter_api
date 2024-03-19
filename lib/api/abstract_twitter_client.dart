@@ -40,4 +40,6 @@ abstract class AbstractTwitterClient {
   void setHttpAddr(String InHttpAddr);
 
   String getHttpAddr();
+
+  bool IsHttps();
 }

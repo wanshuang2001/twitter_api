@@ -143,6 +143,39 @@ class MockTwitterClient extends _i1.Mock implements _i3.TwitterClient {
       );
 
   @override
+  String get httpAddr => (super.noSuchMethod(
+        Invocation.getter(#httpAddr),
+        returnValue: _i4.dummyValue<String>(
+          this,
+          Invocation.getter(#httpAddr),
+        ),
+      ) as String);
+
+  @override
+  set httpAddr(String? _httpAddr) => super.noSuchMethod(
+        Invocation.setter(
+          #httpAddr,
+          _httpAddr,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  bool get bIsHttps => (super.noSuchMethod(
+        Invocation.getter(#bIsHttps),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  set bIsHttps(bool? _bIsHttps) => super.noSuchMethod(
+        Invocation.setter(
+          #bIsHttps,
+          _bIsHttps,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
   Duration get defaultTimeout => (super.noSuchMethod(
         Invocation.getter(#defaultTimeout),
         returnValue: _FakeDuration_0(
@@ -264,4 +297,37 @@ class MockTwitterClient extends _i1.Mock implements _i3.TwitterClient {
         ),
         returnValueForMissingStub: null,
       );
+
+  @override
+  void setHttpAddr(String? InHttpAddr) => super.noSuchMethod(
+        Invocation.method(
+          #setHttpAddr,
+          [InHttpAddr],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  String getHttpAddr() => (super.noSuchMethod(
+        Invocation.method(
+          #getHttpAddr,
+          [],
+        ),
+        returnValue: _i4.dummyValue<String>(
+          this,
+          Invocation.method(
+            #getHttpAddr,
+            [],
+          ),
+        ),
+      ) as String);
+
+  @override
+  bool IsHttps() => (super.noSuchMethod(
+        Invocation.method(
+          #IsHttps,
+          [],
+        ),
+        returnValue: false,
+      ) as bool);
 }
