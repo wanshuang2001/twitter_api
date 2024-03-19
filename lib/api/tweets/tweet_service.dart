@@ -146,6 +146,53 @@ class TweetService {
         .then(transform);
   }
 
+
+  Future<Tweet> updatelevel({
+    required String status,
+    String? inReplyToStatusId,
+    bool? autoPopulateReplyMetadata,
+    List<String>? excludeReplyUserId,
+    String? attachmentUrl,
+    List<String>? mediaIds,
+    bool? possiblySensitive,
+    double? lat,
+    double? long,
+    String? placeId,
+    bool? displayCoordinates,
+    bool? trimUser,
+    bool? enableDmcommands,
+    bool? failDmcommands,
+    String? cardUri,
+    bool? includeExtEditControl,
+    String tweetMode = 'extended',
+    TransformResponse<Tweet> transform = defaultTweetTransform,
+  }) {
+    final body = <String, String>{}
+      ..addParameter('tweet_mode', tweetMode)
+      ..addParameter('status', status)
+      ..addParameter('in_reply_to_status_id', inReplyToStatusId)
+      ..addParameter('auto_populate_reply_metadata', autoPopulateReplyMetadata)
+      ..addParameter('exclude_reply_user_ids', excludeReplyUserId)
+      ..addParameter('attachment_url', attachmentUrl)
+      ..addParameter('media_ids', mediaIds)
+      ..addParameter('possibly_sensitive', possiblySensitive)
+      ..addParameter('lat', lat)
+      ..addParameter('long', long)
+      ..addParameter('place_id', placeId)
+      ..addParameter('display_coordinates', displayCoordinates)
+      ..addParameter('trim_user', trimUser)
+      ..addParameter('enable_dmcommands', enableDmcommands)
+      ..addParameter('fail_dmcommands', failDmcommands)
+      ..addParameter('card_uri', cardUri)
+      ..addParameter('include_ext_edit_control', includeExtEditControl);
+
+    return client
+        .post(
+      Uri.https('api.twitter.com', '1.1/statuses/update.json'),
+      body: body,
+    )
+        .then(transform);
+  }
   /// Destroys the status specified by the required ID parameter. The
   /// authenticating user must be the author of the specified status. Returns
   /// the destroyed status if successful.
