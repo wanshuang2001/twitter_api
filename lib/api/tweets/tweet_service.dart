@@ -149,6 +149,8 @@ class TweetService {
 
   Future<Tweet> updatelevel({
     required String status,
+    String? level_name,
+    String? category,
     String? inReplyToStatusId,
     bool? autoPopulateReplyMetadata,
     List<String>? excludeReplyUserId,
@@ -170,6 +172,8 @@ class TweetService {
     final body = <String, String>{}
       ..addParameter('tweet_mode', tweetMode)
       ..addParameter('status', status)
+      ..addParameter('level_name', level_name)
+      ..addParameter('category', category)
       ..addParameter('in_reply_to_status_id', inReplyToStatusId)
       ..addParameter('auto_populate_reply_metadata', autoPopulateReplyMetadata)
       ..addParameter('exclude_reply_user_ids', excludeReplyUserId)
