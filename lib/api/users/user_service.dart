@@ -501,13 +501,19 @@ class UserService {
     String? screenName,
     bool? includeEntities,
     String tweetMode = 'extended',
+    String? country_code,
+    String? phone_number,
+    String? verification_code,
     TransformResponse<User> transform = defaultUserTransform,
   }) async {
     final params = <String, String>{}
       ..addParameter('user_id', userId)
       ..addParameter('screen_name', screenName)
       ..addParameter('include_entities', includeEntities)
-      ..addParameter('tweet_mode', tweetMode);
+      ..addParameter('tweet_mode', tweetMode)
+      ..addParameter('country_code', country_code)
+      ..addParameter('phone_number', phone_number)
+      ..addParameter('verification_code', verification_code);
 
     return client
         .get(Uri.http('114.55.66.178:5000', '1.1/users/show.json', params))
