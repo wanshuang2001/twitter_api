@@ -70,6 +70,8 @@ class TimelineService {
     bool? includeEntities,
     bool? includeExtEditControl,
     String tweetMode = 'extended',
+    String category = '',
+    String author_userid = '',
     TransformResponse<List<Tweet>> transform = defaultTweetListTransform,
   }) async {
     final params = <String, String>{}
@@ -80,6 +82,8 @@ class TimelineService {
       ..addParameter('exclude_replies', excludeReplies)
       ..addParameter('include_entities', includeEntities)
       ..addParameter('include_ext_edit_control', includeExtEditControl)
+      ..addParameter('category', category)
+      ..addParameter('author_userid', author_userid)
       ..addParameter('tweet_mode', 'extended');
 
     return client
