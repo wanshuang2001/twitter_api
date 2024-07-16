@@ -65,13 +65,13 @@ class TimelineService {
     int? count,
     String? sinceId,
     String? maxId,
+    String? category,
+    String? author_userid,
     bool? trimUser,
     bool? excludeReplies,
     bool? includeEntities,
     bool? includeExtEditControl,
     String tweetMode = 'extended',
-    String category = '',
-    String author_userid = '',
     TransformResponse<List<Tweet>> transform = defaultTweetListTransform,
   }) async {
     final params = <String, String>{}
